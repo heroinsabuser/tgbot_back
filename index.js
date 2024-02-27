@@ -37,7 +37,7 @@ bot.on("message", async (msg) => {
       await bot.sendMessage(chatId, "Страна: " + data?.country);
       await bot.sendMessage(chatId, "Улица: " + data?.street);
       setTimeout(async () => {
-        await bot.sendMessage(chatId, "Все уловил, жди ментов");
+        await bot.sendMessage(chatId, "Все уловил");
       }, 2000);
     } catch (e) {
       console.log(e);
@@ -58,8 +58,8 @@ app.post('/web-data', async(req,res)=>{
     await bot.answerWebAppQuery(queryId,{
       type:'article',
       id:queryId,
-      title:'Не удалось лох',
-      input_message_content:{message_text:'Не удалось лох'}
+      title:'Не удалось',
+      input_message_content:{message_text:'Не удалось'}
     })
     return res.status(500).json({})
   }
